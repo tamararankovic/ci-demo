@@ -3,8 +3,7 @@ version: "3.8"
 services:
 
   catalogue_service:
-    build: .
-    image: catalogue_service
+    image: tamarar/ci-demo:latest
     container_name: catalogue_service
     hostname: catalogue_service
     restart: always
