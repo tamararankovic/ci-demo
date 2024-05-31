@@ -14,17 +14,17 @@ services:
       JAEGER_ADDRESS: ${JAEGER_ADDRESS}
     depends_on:
       - jaeger
-    networks:
-      - network
+    # networks:
+    #   - network
 
   jaeger:
     image: jaegertracing/all-in-one:latest
     ports:
       - "6831:6831/udp"
       - "16686:16686"
-    networks:
-      - network
+    # networks:
+    #   - network
 
-networks:
-  network:
-    driver: bridge
+# networks:
+#   network:
+#     driver: bridge
