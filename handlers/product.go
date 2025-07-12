@@ -46,10 +46,3 @@ func (h ProductHandler) GetProduct(w http.ResponseWriter, r *http.Request) {
 	w.Write(jsonResp)
 	w.WriteHeader(http.StatusOK)
 }
-
-// func ExtractTraceInfoMiddleware(next http.Handler) http.Handler {
-// 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-// 		ctx := otel.GetTextMapPropagator().Extract(r.Context(), propagation.HeaderCarrier(r.Header))
-// 		next.ServeHTTP(w, r.WithContext(ctx))
-// 	})
-// }
