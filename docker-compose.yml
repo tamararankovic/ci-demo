@@ -4,6 +4,9 @@ services:
 
   product_service:
     image: tamarar/ci-demo:latest
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     container_name: product_service
     hostname: product_service
     restart: always
