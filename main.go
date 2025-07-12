@@ -20,7 +20,6 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
 )
 
-// test comment
 func main() {
 	cfg := config.GetConfig()
 
@@ -35,7 +34,7 @@ func main() {
 	defer func() { _ = tp.Shutdown(ctx) }()
 	otel.SetTracerProvider(tp)
 	// Finally, set the tracer that can be used for this package.
-	tracer := tp.Tracer("catalogue-service")
+	tracer := tp.Tracer("product-service")
 	otel.SetTextMapPropagator(propagation.TraceContext{})
 
 	productRepository := data.ProductRepository{Tracer: tracer, Products: data.Products}
@@ -79,7 +78,7 @@ func newTraceProvider(exp sdktrace.SpanExporter) *sdktrace.TracerProvider {
 		resource.Default(),
 		resource.NewWithAttributes(
 			semconv.SchemaURL,
-			semconv.ServiceNameKey.String("catalogue-service"),
+			semconv.ServiceNameKey.String("product-service"),
 		),
 	)
 

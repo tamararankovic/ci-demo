@@ -9,7 +9,7 @@ type Config struct {
 
 func GetConfig() Config {
 	return Config{
-		Address:       os.Getenv("CATALOGUE_SERVICE_ADDRESS"),
+		Address:       os.Getenv("PRODUCT_SERVICE_ADDRESS"),
 		JaegerAddress: os.Getenv("JAEGER_ADDRESS"),
 	}
 }
