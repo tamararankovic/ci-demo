@@ -20,6 +20,7 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.12.0"
 )
 
+// test comment
 func main() {
 	cfg := config.GetConfig()
 
